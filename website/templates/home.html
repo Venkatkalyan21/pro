@@ -1,0 +1,269 @@
+{% extends "base.html" %} 
+{% block title %}FitLife Gym{% endblock %} 
+
+{% block content %}
+
+<div class="hero">
+    <div class="container text-center text-white">
+        <h1 class="display-4">Welcome to FitLife Gym</h1>
+        <p class="lead">Transform Your Life Through Fitness</p>
+        {% if user.is_authenticated %}
+        <a class="btn btn-primary btn-lg mr-3" href="#programs">Explore Programs</a>
+        <a class="btn btn-outline-light btn-lg" href="/logout">Logout</a>
+        {% else %}
+        <a class="btn btn-primary btn-lg mr-3" href="/sign-up">Join Now</a>
+        <a class="btn btn-outline-light btn-lg" href="/login">Login</a>
+        {% endif %}
+    </div>
+</div>
+
+<section id="programs" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Programs</h2>
+        <div class="row">
+          
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-dumbbell fa-3x text-primary mb-3"></i>
+                        <h3 class="card-title">Strength Training</h3>
+                        <p class="card-text">Build muscle and increase strength with our comprehensive weight training programs.</p>
+                        <a href="#contact" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+         
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-running fa-3x text-primary mb-3"></i>
+                        <h3 class="card-title">Cardio Fitness</h3>
+                        <p class="card-text">Improve your endurance and heart health with our state-of-the-art cardio equipment.</p>
+                        <a href="#contact" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+     
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-peace fa-3x text-primary mb-3"></i>
+                        <h3 class="card-title">Yoga & Flexibility</h3>
+                        <p class="card-text">Enhance your flexibility and peace of mind with our yoga and stretching classes.</p>
+                        <a href="#contact" class="btn btn-outline-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="schedule" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Class Schedule</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Wednesday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>6:00 AM</strong></td>
+                        <td>CrossFit</td>
+                        <td>HIIT</td>
+                        <td>CrossFit</td>
+                    </tr>
+                    <tr>
+                        <td><strong>9:00 AM</strong></td>
+                        <td>Yoga</td>
+                        <td>Strength</td>
+                        <td>Yoga</td>
+                    </tr>
+                    <tr>
+                        <td><strong>6:00 PM</strong></td>
+                        <td>HIIT</td>
+                        <td>CrossFit</td>
+                        <td>HIIT</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section id="packages" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Membership Packages</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="my-0 font-weight-normal">Basic</h3>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title pricing-card-title">₹999<small class="text-muted">/mo</small></h4>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>Access to Gym Equipment</li>
+                            <li>Basic Fitness Assessment</li>
+                            <li>Locker Access</li>
+                            <li>2 Group Classes/Month</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-lg btn-block btn-outline-primary">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="my-0 font-weight-normal">Premium</h3>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title pricing-card-title">₹1,999<small class="text-muted">/mo</small></h4>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>All Basic Features</li>
+                            <li>Personal Trainer (2 sessions/week)</li>
+                            <li>Nutrition Consultation</li>
+                            <li>Unlimited Group Classes</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-lg btn-block btn-success">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-header bg-info text-white">
+                        <h3 class="my-0 font-weight-normal">Elite</h3>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title pricing-card-title">₹2,999<small class="text-muted">/mo</small></h4>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>All Premium Features</li>
+                            <li>Personal Trainer (4 sessions/week)</li>
+                            <li>Monthly Body Composition Analysis</li>
+                            <li>Access to Spa & Swimming Pool</li>
+                        </ul>
+                        <a href="#contact" class="btn btn-lg btn-block btn-info text-white">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Feedback</h2>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST" action="{{ url_for('views.submit_feedback') }}">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                            <div class="form-group mb-3">
+                                <label for="rating">Rating</label>
+                                <select class="form-control" id="rating" name="rating" required>
+                                    <option value="">Select Rating</option>
+                                    <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
+                                    <option value="4">⭐⭐⭐⭐ Very Good</option>
+                                    <option value="3">⭐⭐⭐ Good</option>
+                                    <option value="2">⭐⭐ Fair</option>
+                                    <option value="1">⭐ Poor</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="category">Category</label>
+                                <select class="form-control" id="category" name="category" required>
+                                    <option value="">Select Category</option>
+                                    <option value="facilities">Gym Facilities</option>
+                                    <option value="trainers">Trainers</option>
+                                    <option value="classes">Classes</option>
+                                    <option value="equipment">Equipment</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="feedback">Your Feedback</label>
+                                <textarea class="form-control" id="feedback" name="feedback" rows="4" required 
+                                    placeholder="Please share your experience with us..."></textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="suggestions">Suggestions for Improvement (Optional)</label>
+                                <textarea class="form-control" id="suggestions" name="suggestions" rows="3" 
+                                    placeholder="Any suggestions to help us serve you better..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Submit Feedback</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h4>About FitLife</h4>
+                <p>Transform your life with our state-of-the-art facilities and expert trainers.</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h4>Quick Links</h4>
+                <ul class="list-unstyled">
+                    <li><a href="#programs" class="text-white">Programs</a></li>
+                    <li><a href="#schedule" class="text-white">Schedule</a></li>
+                    <li><a href="#contact" class="text-white">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h4>Connect With Us</h4>
+                <a href="#" class="text-white mr-3"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#" class="text-white mr-3"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+        </div>
+        <hr class="bg-light">
+        <p class="text-center mb-0"> 2024 FitLife Gym. All rights reserved.</p>
+    </div>
+</footer>
+
+<style>
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        text-align: center;
+    }
+    .btn-lg {
+        display: block;
+        width: 200px;
+        margin: 10px auto;
+    }
+}
+</style>
+{% endblock %}
